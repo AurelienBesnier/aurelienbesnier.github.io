@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Gallery - AB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+    <a href="./index.html">Home</a>
+    <a href="./projects.htm">Projects</a>
+    <a href="./gallery.htm">Gallery</a>
+    <a href="./publications.htm">Publications</a>
+    <a href="https://forge.inrae.fr/aurelien.besnier/pages/">Repository</a>
+</div>
+<h1>Gallery</h1>
+
+<div class="alert">
+  Work in progress.
+</div>
+
+<div>
+    <p>Wheat Splat</p>
+    <div id="sc1" class="container"></div>
+    <p>Maize Splat</p>
+    <div id="sc2" class="container"></div>
+</div>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+      "@sparkjsdev/spark": "https://sparkjs.dev/releases/spark/2.1.0/spark.module.js"
+    }
+  }
+</script>
+
+
+<script type="module">
+  import * as THREE from "three";
+  import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
+
+    
+
+    async function addSplat(containerId, url, x = 0, y = 0, z = 0) {
+        const container = document.getElementById(containerId);
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(container.offsetWidth, container.offsetHeight);
+        container.appendChild(renderer.domElement);
+
+        const spark = new SparkRenderer({ renderer });
+        scene.add(spark);
+
+        const splatURL = url;
+        const butterfly = new SplatMesh({ url: splatURL });
+        butterfly.quaternion.set(1, 0, 0, 0);
+        butterfly.position.set(x, y, z);
+        scene.add(butterfly);
+
+        renderer.setAnimationLoop(function animate(time) {
+            renderer.render(scene, camera);
+            butterfly.rotation.y += 0.01;
+        });
+    }
+    addSplat('sc1', './data/PXL_20230929_174019921.TS.splat', 0, -0.5, -1);
+    addSplat('sc2', './data/IMG_2546_109_cleaned.splat', 0, -1, -2);
+</script>
+
+</body>
+</html>

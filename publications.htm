@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Publications - AB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./ext/dist/hal-bibliography-integrator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript">
+        const hal_bibliography_integrator_conf = {
+            "id": "aurelien-besnier",  // enter HAL identifier
+            "typeList": [   // Configure documents to fetch
+                "THESE",
+                "POSTER",
+                "ART",
+                "PROCEEDINGS",
+                "UNDEFINED",
+                "COMM"
+            ],
+            "doit": true,         // trigger
+            "debug": false,       // disable logs
+            "onLoad": "expanded", // section default behavior (expanded || collapsed)
+        }
+    </script>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                tags: "all"
+            },
+            svg: {
+                fontCache: 'global'
+            },
+            loader: {
+                load: ['[tex]/html']
+            }
+        };
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+</head>
+<body>
+<div class="navbar">
+    <a href="./index.html">Home</a>
+    <a href="./projects.htm">Projects</a>
+    <a href="./gallery.htm">Gallery</a>
+    <a href="./publications.htm">Publications</a>
+    <a href="https://forge.inrae.fr/aurelien.besnier/pages/">Repository</a>
+</div>
+<h1>Publications</h1>
+
+<div id="hal-bibliography-integrator"></div>
+
+<script type="module">
+    import { hbi_start } from './ext/dist/hal-bibliography-integrator.min.es.js'
+    hbi_start(hal_bibliography_integrator_conf);
+</script>
+</body>
+</html>
