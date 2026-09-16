@@ -48,6 +48,7 @@
         const container = document.getElementById(containerId);
 
         const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xeeeeee);
         const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(container.offsetWidth, container.offsetHeight);
