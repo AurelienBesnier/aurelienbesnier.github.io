@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="generator" content="GitLab Pages">
+    <meta name="generator" content="GitHub Pages">
     <title>Gallery - AB</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,6 +12,7 @@
     <a href="./projects.htm">Projects</a>
     <a href="./gallery.htm">Gallery</a>
     <a href="./publications.htm">Publications</a>
+    <a href="./posts.htm">Posts</a>
     <a href="https://github.com/AurelienBesnier/aurelienbesnier.github.io">Repository</a>
 </div>
 <h1>Gallery</h1>
@@ -23,8 +24,12 @@
 <div>
     <p>Wheat Splat</p>
     <div id="sc1" class="container"></div>
-    <p>Maize Splat</p>
+    <p>Wheat Main Stem Splat</p>
     <div id="sc2" class="container"></div>
+    <p>Wheat Ear</p>
+    <div id="sc3" class="container"></div>
+    <p>Maize Splat</p>
+    <div id="sc4" class="container"></div>
 </div>
 
 <script type="importmap">
@@ -75,8 +80,10 @@
             splat.rotation.y += 0.01;
         });
     }
-    addSplat('sc1', './data/PXL_20230929_174019921.TS.splat', 0, -0.5, -1);
-    addSplat('sc2', './data/IMG_2546_109_cleaned.splat', 0, -1, -2);
+    addSplat('sc1', './data/wheat_full.splat', 0, -0.5, -1);
+    addSplat('sc2', './data/wheat_ms.splat', 0, -0.5, -1);
+    addSplat('sc3', './data/wheat_ear.splat', 0, -0.5, -1);
+    addSplat('sc4', './data/maize.splat', 0, -1, -2);
 </script>
 
 </body>
